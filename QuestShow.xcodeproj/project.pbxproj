@@ -1,0 +1,335 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		84BBD7131CAEEC7A000755E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BBD7121CAEEC7A000755E4 /* AppDelegate.swift */; };
+		84BBD7151CAEEC7A000755E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BBD7141CAEEC7A000755E4 /* ViewController.swift */; };
+		84BBD7181CAEEC7A000755E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84BBD7161CAEEC7A000755E4 /* Main.storyboard */; };
+		84BBD71A1CAEEC7A000755E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84BBD7191CAEEC7A000755E4 /* Assets.xcassets */; };
+		84BBD71D1CAEEC7A000755E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84BBD71B1CAEEC7A000755E4 /* LaunchScreen.storyboard */; };
+		84BBD72A1CAEF99D000755E4 /* QuestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BBD7291CAEF99D000755E4 /* QuestViewController.swift */; };
+		84BBD72E1CAEFABA000755E4 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BBD72D1CAEFABA000755E4 /* libsqlite3.tbd */; settings = {ATTRIBUTES = (Required, ); }; };
+		84BBD7321CAF0F1B000755E4 /* Quests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BBD7311CAF0F1B000755E4 /* Quests.swift */; };
+		84BBD7341CAF1407000755E4 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BBD7331CAF1407000755E4 /* Register.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		84BBD70F1CAEEC7A000755E4 /* QuestShow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuestShow.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84BBD7121CAEEC7A000755E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		84BBD7141CAEEC7A000755E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../../ViewController.swift; sourceTree = "<group>"; };
+		84BBD7171CAEEC7A000755E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		84BBD7191CAEEC7A000755E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84BBD71C1CAEEC7A000755E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		84BBD71E1CAEEC7A000755E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84BBD7291CAEF99D000755E4 /* QuestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestViewController.swift; sourceTree = "<group>"; };
+		84BBD72D1CAEFABA000755E4 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		84BBD7311CAF0F1B000755E4 /* Quests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quests.swift; sourceTree = "<group>"; };
+		84BBD7331CAF1407000755E4 /* Register.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84BBD70C1CAEEC7A000755E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84BBD72E1CAEFABA000755E4 /* libsqlite3.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		84BBD7061CAEEC7A000755E4 = {
+			isa = PBXGroup;
+			children = (
+				84BBD72D1CAEFABA000755E4 /* libsqlite3.tbd */,
+				84BBD7111CAEEC7A000755E4 /* QuestShow */,
+				84BBD7101CAEEC7A000755E4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		84BBD7101CAEEC7A000755E4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84BBD70F1CAEEC7A000755E4 /* QuestShow.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84BBD7111CAEEC7A000755E4 /* QuestShow */ = {
+			isa = PBXGroup;
+			children = (
+				84BBD7251CAEF174000755E4 /* controller */,
+				84BBD7261CAEF174000755E4 /* model */,
+				84BBD7241CAEF161000755E4 /* view */,
+				84BBD7121CAEEC7A000755E4 /* AppDelegate.swift */,
+				84BBD7191CAEEC7A000755E4 /* Assets.xcassets */,
+				84BBD71E1CAEEC7A000755E4 /* Info.plist */,
+			);
+			path = QuestShow;
+			sourceTree = "<group>";
+		};
+		84BBD7241CAEF161000755E4 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				84BBD71B1CAEEC7A000755E4 /* LaunchScreen.storyboard */,
+				84BBD7161CAEEC7A000755E4 /* Main.storyboard */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		84BBD7251CAEF174000755E4 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				84BBD7141CAEEC7A000755E4 /* ViewController.swift */,
+				84BBD7291CAEF99D000755E4 /* QuestViewController.swift */,
+			);
+			name = controller;
+			path = view/controller;
+			sourceTree = "<group>";
+		};
+		84BBD7261CAEF174000755E4 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				84BBD7311CAF0F1B000755E4 /* Quests.swift */,
+				84BBD7331CAF1407000755E4 /* Register.swift */,
+			);
+			name = model;
+			path = view/model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84BBD70E1CAEEC7A000755E4 /* QuestShow */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84BBD7211CAEEC7A000755E4 /* Build configuration list for PBXNativeTarget "QuestShow" */;
+			buildPhases = (
+				84BBD70B1CAEEC7A000755E4 /* Sources */,
+				84BBD70C1CAEEC7A000755E4 /* Frameworks */,
+				84BBD70D1CAEEC7A000755E4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QuestShow;
+			productName = QuestShow;
+			productReference = 84BBD70F1CAEEC7A000755E4 /* QuestShow.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84BBD7071CAEEC7A000755E4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = admin;
+				TargetAttributes = {
+					84BBD70E1CAEEC7A000755E4 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+				};
+			};
+			buildConfigurationList = 84BBD70A1CAEEC7A000755E4 /* Build configuration list for PBXProject "QuestShow" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 84BBD7061CAEEC7A000755E4;
+			productRefGroup = 84BBD7101CAEEC7A000755E4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84BBD70E1CAEEC7A000755E4 /* QuestShow */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		84BBD70D1CAEEC7A000755E4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84BBD71D1CAEEC7A000755E4 /* LaunchScreen.storyboard in Resources */,
+				84BBD71A1CAEEC7A000755E4 /* Assets.xcassets in Resources */,
+				84BBD7181CAEEC7A000755E4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84BBD70B1CAEEC7A000755E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84BBD7321CAF0F1B000755E4 /* Quests.swift in Sources */,
+				84BBD7151CAEEC7A000755E4 /* ViewController.swift in Sources */,
+				84BBD7131CAEEC7A000755E4 /* AppDelegate.swift in Sources */,
+				84BBD72A1CAEF99D000755E4 /* QuestViewController.swift in Sources */,
+				84BBD7341CAF1407000755E4 /* Register.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		84BBD7161CAEEC7A000755E4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84BBD7171CAEEC7A000755E4 /* Base */,
+			);
+			name = Main.storyboard;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		84BBD71B1CAEEC7A000755E4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84BBD71C1CAEEC7A000755E4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			path = ..;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		84BBD71F1CAEEC7A000755E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		84BBD7201CAEEC7A000755E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		84BBD7221CAEEC7A000755E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = QuestShow/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.edu.ifpb.si.pdm.QuestShow;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		84BBD7231CAEEC7A000755E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = QuestShow/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.edu.ifpb.si.pdm.QuestShow;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84BBD70A1CAEEC7A000755E4 /* Build configuration list for PBXProject "QuestShow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84BBD71F1CAEEC7A000755E4 /* Debug */,
+				84BBD7201CAEEC7A000755E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84BBD7211CAEEC7A000755E4 /* Build configuration list for PBXNativeTarget "QuestShow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84BBD7221CAEEC7A000755E4 /* Debug */,
+				84BBD7231CAEEC7A000755E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 84BBD7071CAEEC7A000755E4 /* Project object */;
+}
