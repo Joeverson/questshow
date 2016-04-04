@@ -17,7 +17,7 @@ class Register {
         
         let path = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0]
         
-        self.file = "\(path)/data_here"
+        self.file = "\(path)/data_show"
         
         if let obj = NSKeyedUnarchiver.unarchiveObjectWithFile(self.file){
             self.listQuests = obj as! Array<Quests>
@@ -31,19 +31,25 @@ class Register {
         self.organizeAnswers()
     }
     
-    
+    //coloca as alternativas de forma aleatoria, onde as erradas sao certas de outras perguntas
     func organizeAnswers(){
         let count = self.listQuests.count
         let random = Int(arc4random_uniform(UInt32(count)))
         
         if(count > 3){
             for(var i = 0; i < count; i++){
-                self.listQuests[i].answer2 = self.listQuests[random].answer1
+                self.listQuests[i].answer1 = self.listQuests[random].correct
                 
                 if count == random {
-                    self.listQuests[i].answer3 = self.listQuests[random-1].answer1
+                    self.listQuests[i].answer2 = self.listQuests[random-1].correct
                 }else{
-                    self.listQuests[i].answer3 = self.listQuests[random+1].answer1
+                    self.listQuests[i].answer2 = self.listQuests[random+1].correct
+                }
+                
+                if count == random {
+                    self.listQuests[i].answer3 = self.listQuests[random-1].correct
+                }else{
+                    self.listQuests[i].answer3 = self.listQuests[random+1].correct
                 }
             }
         }

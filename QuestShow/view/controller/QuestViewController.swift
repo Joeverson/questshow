@@ -10,7 +10,7 @@ import UIKit
 
 class QuestViewController: UIViewController {
     
-    var register:Register?
+    var game:Game?
 
     //btns das responstas
     @IBOutlet weak var swOne: UISwitch!
@@ -26,6 +26,12 @@ class QuestViewController: UIViewController {
     //contagem de quests
     @IBOutlet weak var lbCountQuest: UILabel!
     
+    //valor correto escolhido
+    var correct:String?
+    
+    //objeto com as informaçoes do jogador
+    var player:Players!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,29 +41,15 @@ class QuestViewController: UIViewController {
         self.swTwo.on = false
         
         
-        self.register = Register()
+        self.game = Game()
         
-        //so alimentando quando estiver vazio a lista
-        //if(self.register?.count() == 0 ){
-            let q = Quests(q: "Qual o maior planeta do sistema solar?", a: "Júpiter")
-            let q1 = Quests(q: "Quantos ossos tem o corpo humano?", a: "206")
-            let q2 = Quests(q: "Qual o primeiro personagem de Walt Disney?", a: "Mickey Mouse.")
-            let q3 = Quests(q: "Quem pintou o quadro Mona Lisa?", a: "Leonardo da Vinci")
-            
-            //alimentando inicialmente o sistema.
-            self.register?.add(q)
-            self.register?.add(q1)
-            self.register?.add(q2)
-            self.register?.add(q3)
-
-        //}
-      
+        
         
         //alimentando com a primeira pergunta o game.
-        self.tGeral.text = self.register?.get(1).quest
-        self.tOne.text = self.register?.get(1).answer1
-        self.tTwo.text = self.register?.get(1).answer2
-        self.tThree.text = self.register?.get(1).answer3
+        self.tGeral.text = self.game?.quest
+        self.tOne.text = self.game?.answer
+        self.tTwo.text = self.game?.answer2
+        self.tThree.text = self.game?.answer3
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,10 +57,55 @@ class QuestViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    
     @IBAction func btDone(sender: AnyObject) {
+        /*let alert = UIAlertController(title: "Tem certeza?", message: "Sua resposta é \(String(self.correct))?", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        alert.addAction(UIAlertAction(title: "Sim", style: UIAlertActionStyle.Cancel, handler: nil))
+        
+        UIApplication.sharedApplication().keyWindow?.rootViewController?.presentedViewController!.presentViewController(alert, animated: true, completion: nil)*/
+        
+        if ((self.game?.validation(self.correct!)) != nil){
+            self.tGeral.text = self.game?.quest
+            self.tOne.text = self.game?.answer
+            self.tTwo.text = self.game?.answer2
+            self.tThree.text = self.game?.answer3
+        }else{
+            let alert = UIAlertController(title: "You lose", message: "The answer correct is\(String(self.correct))!", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            alert.addAction(UIAlertAction(title: "ok", style: UIAlertActionStyle.Cancel, handler: nil))
+            
+            UIApplication.sharedApplication().keyWindow?.rootViewController?.presentedViewController!.presentViewController(alert, animated: true, completion: nil)
+        }
+        
     }
     
-
+    
+    
+    
+    
+    /**
+    avaliando quais botoes estao ativos e desativando se houver mais de
+    um ativo
+    **/
+    
+    @IBAction func btnOne(sender: AnyObject) {
+        swTwo.on = false
+        swThree.on = false
+        
+        correct = tOne.text
+    }
+    @IBAction func btnTwo(sender: AnyObject) {
+        swOne.on = false
+        swThree.on = false
+        correct = tTwo.text
+    }
+    @IBAction func btnThree(sender: AnyObject) {
+        swOne.on = false
+        swTwo.on = false
+        correct = tThree.text
+    }
     
 
     /*
