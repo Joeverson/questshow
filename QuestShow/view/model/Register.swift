@@ -34,23 +34,15 @@ class Register {
     //coloca as alternativas de forma aleatoria, onde as erradas sao certas de outras perguntas
     func organizeAnswers(){
         let count = self.listQuests.count
-        let random = Int(arc4random_uniform(UInt32(count)))
         
         if(count > 3){
             for(var i = 0; i < count; i++){
-                self.listQuests[i].answer1 = self.listQuests[random].correct
                 
-                if count == random {
-                    self.listQuests[i].answer2 = self.listQuests[random-1].correct
-                }else{
-                    self.listQuests[i].answer2 = self.listQuests[random+1].correct
-                }
+                //finalmemte entregando os valores aleatorios
+                self.listQuests[i].answer1 = self.listQuests[Int(arc4random_uniform(UInt32(count)))].correct
+                self.listQuests[i].answer2 = self.listQuests[i].correct
+                self.listQuests[i].answer3 = self.listQuests[Int(arc4random_uniform(UInt32(count)))].correct
                 
-                if count == random {
-                    self.listQuests[i].answer3 = self.listQuests[random-1].correct
-                }else{
-                    self.listQuests[i].answer3 = self.listQuests[random+1].correct
-                }
             }
         }
     }

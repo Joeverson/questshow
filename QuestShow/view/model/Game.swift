@@ -22,6 +22,8 @@ class Game {
     //jogador
     var player:Players!
     
+    
+    
     init(){
         self.register = Register()
         
@@ -64,6 +66,10 @@ class Game {
         
         //correct
         self.correct = self.register.get(random).correct
+        
+        print(self.answer)
+        print(self.answer2)
+        print(self.answer3)
     }
     
     //carregando inicialmente a lista com quests
@@ -78,6 +84,19 @@ class Game {
         self.register?.add(q1)
         self.register?.add(q2)
         self.register?.add(q3)
+    }
+    
+    /**
+    --------------------------
+    **/
+    
+    //verificando se ele perdeu
+    func lose() -> Bool{
+        if(self.player.life <= 0){
+            return true
+        }
+        
+        return false
     }
     
 }

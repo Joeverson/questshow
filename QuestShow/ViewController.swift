@@ -59,7 +59,7 @@ class ViewController: UIViewController {
         if(segue.identifier == "questshownow"){
             //let view = segue.destinationViewController as! ViewController
             
-            //view. = Players(self.fName, self.swDifficulty)
+            //view.player = Players(self.fName, self.swDifficulty)
         }
         
     }

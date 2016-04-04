@@ -66,17 +66,28 @@ class QuestViewController: UIViewController {
         
         UIApplication.sharedApplication().keyWindow?.rootViewController?.presentedViewController!.presentViewController(alert, animated: true, completion: nil)*/
         
-        if ((self.game?.validation(self.correct!)) != nil){
+        if (((self.game?.validation(self.correct!))) != nil){
+            //quantidades de perguntas
+            self.lbCountQuest.text = String(Int(self.lbCountQuest.text!)! + 1)
+
+            //mudando a perguntas e alternativas
             self.tGeral.text = self.game?.quest
             self.tOne.text = self.game?.answer
             self.tTwo.text = self.game?.answer2
             self.tThree.text = self.game?.answer3
+            
+            //zerando as opcoes
+            swOne.on = false
+            swTwo.on = false
+            swThree.on = false
+            print(self.game?.player.name)
+            
         }else{
-            let alert = UIAlertController(title: "You lose", message: "The answer correct is\(String(self.correct))!", preferredStyle: UIAlertControllerStyle.Alert)
-            
-            alert.addAction(UIAlertAction(title: "ok", style: UIAlertActionStyle.Cancel, handler: nil))
-            
-            UIApplication.sharedApplication().keyWindow?.rootViewController?.presentedViewController!.presentViewController(alert, animated: true, completion: nil)
+            if self.game!.lose() {
+                self.navigationController?.popViewControllerAnimated(true)
+            }else{
+                self.game?.player.lessLife()
+            }
         }
         
     }

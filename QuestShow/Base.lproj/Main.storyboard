@@ -5,6 +5,38 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
+        <!--Table View Controller-->
+        <scene sceneID="HgW-d8-MgB">
+            <objects>
+                <tableViewController id="Fes-Wp-9W6" customClass="TableViewController" customModule="QuestShow" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="3D5-pa-bEL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="3DB-2g-mlB">
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3DB-2g-mlB" id="Kl1-JI-jf5">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Fes-Wp-9W6" id="9Zt-DP-SWv"/>
+                            <outlet property="delegate" destination="Fes-Wp-9W6" id="l0M-wl-DXT"/>
+                        </connections>
+                    </tableView>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AOE-NF-Faf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1260" y="-268"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -70,9 +102,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="at7-q5-8ae">
+                        <barButtonItem key="leftBarButtonItem" title="Hanking" id="Ehb-FU-bIH">
+                            <connections>
+                                <segue destination="Fes-Wp-9W6" kind="show" id="nL4-sL-qrT"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Começar" id="CvP-wt-xa0">
                             <connections>
-                                <segue destination="QSu-Np-sV3" kind="show" identifier="questshownow" id="D7g-So-YUh"/>
+                                <segue destination="EuC-tn-mQ5" kind="show" identifier="questshownow" id="3Av-W5-kuj"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -222,6 +259,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QSu-Np-sV3" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kcp-B4-bC0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -234,7 +272,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7oc-Ho-lBa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1692" y="397"/>
+            <point key="canvasLocation" x="1779" y="-109"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="nHQ-JD-Txe"/>
+    </inferredMetricsTieBreakers>
 </document>
