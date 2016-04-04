@@ -10,14 +10,21 @@ import UIKit
 
 class TableViewController: UITableViewController {
 
+    var hanking = Hanking()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+               
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,23 +36,28 @@ class TableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.hanking.count()
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("hank", forIndexPath: indexPath) as! TableViewCell
 
-        // Configure the cell...
-
+        let hank = self.hanking.get(indexPath.row)
+        
+        print(self.hanking.get(indexPath.row).name)
+        
+        cell.lbName.text = hank.name
+        cell.lbScore.text = String(hank.score)
+        
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

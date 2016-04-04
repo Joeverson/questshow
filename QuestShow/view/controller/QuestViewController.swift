@@ -10,7 +10,7 @@ import UIKit
 
 class QuestViewController: UIViewController {
     
-    var game:Game?
+    var game:Game!
 
     //btns das responstas
     @IBOutlet weak var swOne: UISwitch!
@@ -41,7 +41,7 @@ class QuestViewController: UIViewController {
         self.swTwo.on = false
         
         
-        self.game = Game()
+        self.game = Game(player: self.player)
         
         
         
@@ -66,7 +66,7 @@ class QuestViewController: UIViewController {
         
         UIApplication.sharedApplication().keyWindow?.rootViewController?.presentedViewController!.presentViewController(alert, animated: true, completion: nil)*/
         
-        if (((self.game?.validation(self.correct!))) != nil){
+        if self.game!.validation(self.correct!) {
             //quantidades de perguntas
             self.lbCountQuest.text = String(Int(self.lbCountQuest.text!)! + 1)
 
@@ -80,10 +80,14 @@ class QuestViewController: UIViewController {
             swOne.on = false
             swTwo.on = false
             swThree.on = false
+            
             print(self.game?.player.name)
+            print(self.game?.player.score)
+            print(self.game?.player.life)
             
         }else{
             if self.game!.lose() {
+                self.game.addPlayerForHanking()
                 self.navigationController?.popViewControllerAnimated(true)
             }else{
                 self.game?.player.lessLife()

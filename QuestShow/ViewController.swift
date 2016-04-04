@@ -57,9 +57,8 @@ class ViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if(segue.identifier == "questshownow"){
-            //let view = segue.destinationViewController as! ViewController
-            
-            //view.player = Players(self.fName, self.swDifficulty)
+            let view = segue.destinationViewController as! QuestViewController
+            view.player = Players(name: self.fName.text!, difficult: self.strDifficult!)
         }
         
     }

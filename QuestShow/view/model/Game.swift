@@ -22,13 +22,17 @@ class Game {
     //jogador
     var player:Players!
     
+    //hanking
+    var h:Hanking!
     
-    
-    init(){
+    init(player:Players){
         self.register = Register()
         
         //jogador
-        self.player = Players(name: "joer",difficult: "hard")
+        self.player = player
+        
+        //hankde jogadores
+        self.h = Hanking()
         
         //verificando existe algo no arquivo
         if(self.register!.count() == 0){
@@ -39,15 +43,25 @@ class Game {
         self.generateQuestions()
     }
     
+    /**
+     adicionando jogadores a lista de hanking
+     **/
+     
+    func addPlayerForHanking(){
+        h.add(self.player)        
+    }
+    
     //validada a questao se esta correta, caso sim, ele atualiza as informacoes
     //do player e gera um novo game.
     func validation(correct:String) -> Bool{
         if self.correct == correct {
-            self.generateQuestions();
+            self.generateQuestions()
+            self.player.scorePlus()
             return true
-        }else{
-            return false
         }
+        
+        return false
+        
     }
     
     
