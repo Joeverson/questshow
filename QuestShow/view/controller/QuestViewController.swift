@@ -141,7 +141,7 @@ class QuestViewController: UIViewController {
 
     func searchBuscape() {
         guard
-            let url = NSURL(string:  "http://314.bl.ee/api.php?q")
+            let url = NSURL(string:  "http://314.bl.ee/api.php?q=\(self.game.register.count())")
             
             else { return }
         NSURLSession.sharedSession().dataTaskWithURL(url, completionHandler: { (data, response, error) -> Void in

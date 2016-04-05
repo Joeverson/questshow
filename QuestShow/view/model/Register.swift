@@ -19,6 +19,8 @@ class Register {
         
         self.file = "\(path)/data_show"
         
+        print(self.file)
+        
         if let obj = NSKeyedUnarchiver.unarchiveObjectWithFile(self.file){
             self.listQuests = obj as! Array<Quests>
         }else{

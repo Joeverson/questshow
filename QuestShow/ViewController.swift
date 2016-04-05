@@ -60,7 +60,7 @@ class ViewController: UIViewController {
         
         if(segue.identifier == "questshownow"){
             
-            if self.fName == nil{
+            if self.fName.text == nil{
                 self.fName.text = "Anonymus"
             }
             

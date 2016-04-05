@@ -70,8 +70,6 @@ class Game {
     func generateQuestions(){
         let random = Int(arc4random_uniform(UInt32(self.register!.count())))
         
-        print(random)
-        
         self.quest = self.register.get(random).quest
         //alternativas
         self.answer = self.register.get(random).answer1
@@ -81,9 +79,6 @@ class Game {
         //correct
         self.correct = self.register.get(random).correct
         
-        print(self.answer)
-        print(self.answer2)
-        print(self.answer3)
     }
     
     //carregando inicialmente a lista com quests
