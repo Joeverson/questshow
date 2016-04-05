@@ -14,6 +14,8 @@ class TableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
                
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -24,6 +26,7 @@ class TableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
+        self.hanking.organize()
         self.tableView.reloadData()
     }
 
@@ -50,7 +53,7 @@ class TableViewController: UITableViewController {
 
         let hank = self.hanking.get(indexPath.row)
         
-        print(self.hanking.get(indexPath.row).name)
+        //print(self.hanking.get(indexPath.row).name)
         
         cell.lbName.text = hank.name
         cell.lbScore.text = String(hank.score)

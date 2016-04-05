@@ -39,6 +39,11 @@ class Hanking {
         NSKeyedArchiver.archiveRootObject(self.list, toFile: self.file)
     }
     
+    //organizer
+    func organize(){
+        self.list.sortInPlace({ $0.score > $1.score })
+    }
+    
     //quantidade de elementos da LISTA
     func count()->Int{
         return self.list.count

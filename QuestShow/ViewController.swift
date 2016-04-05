@@ -21,6 +21,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "QuestShow"
+        
+        self.strDifficult = "Easy"
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,11 +59,18 @@ class ViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if(segue.identifier == "questshownow"){
+            
+            if self.fName == nil{
+                self.fName.text = "Anonymus"
+            }
+            
+            
             let view = segue.destinationViewController as! QuestViewController
             view.player = Players(name: self.fName.text!, difficult: self.strDifficult!)
         }
         
     }
+    
 
 }
 

@@ -50,6 +50,11 @@ class QuestViewController: UIViewController {
         self.tOne.text = self.game?.answer
         self.tTwo.text = self.game?.answer2
         self.tThree.text = self.game?.answer3
+        
+        
+        //atualizando com o banco de dados de servidor
+        self.searchBuscape()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,11 +65,6 @@ class QuestViewController: UIViewController {
     
     
     @IBAction func btDone(sender: AnyObject) {
-        /*let alert = UIAlertController(title: "Tem certeza?", message: "Sua resposta é \(String(self.correct))?", preferredStyle: UIAlertControllerStyle.Alert)
-        
-        alert.addAction(UIAlertAction(title: "Sim", style: UIAlertActionStyle.Cancel, handler: nil))
-        
-        UIApplication.sharedApplication().keyWindow?.rootViewController?.presentedViewController!.presentViewController(alert, animated: true, completion: nil)*/
         
         if self.game!.validation(self.correct!) {
             //quantidades de perguntas
@@ -85,12 +85,18 @@ class QuestViewController: UIViewController {
             print(self.game?.player.score)
             print(self.game?.player.life)
             
+            
         }else{
             if self.game!.lose() {
                 self.game.addPlayerForHanking()
                 self.navigationController?.popViewControllerAnimated(true)
             }else{
                 self.game?.player.lessLife()
+                
+                
+                let alert = UIAlertController(title: "Eitxa", message: "Voce errou, voce tem \(self.game.player.life) chances", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
             }
         }
         
@@ -133,4 +139,38 @@ class QuestViewController: UIViewController {
     }
     */
 
+    func searchBuscape() {
+        guard
+            let url = NSURL(string:  "http://314.bl.ee/api.php?q")
+            
+            else { return }
+        NSURLSession.sharedSession().dataTaskWithURL(url, completionHandler: { (data, response, error) -> Void in
+            guard
+                let httpURLResponse = response as? NSHTTPURLResponse where httpURLResponse.statusCode == 200,
+                let data = data where error == nil
+                else { return }
+            dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                var error: NSError?
+                
+                let json = JSON(data: data, options: .AllowFragments, error: &error)
+                
+                //apresenta o erro caso haja no server
+                if let error = error {
+                    print(error.localizedDescription)
+                }
+                
+                //print(json)
+                
+                //joga as informacoes que vinheram do servidor e coloca no register
+                for(var i = 0; i < json["data"].count; i++){
+                    self.game.register.add(Quests(q: String(json["data"][i]["quest"]), a: String(json["data"][i]["answer"])))
+                    print(String(json["data"][i]["quest"]))
+                }
+                
+                
+            }
+        }).resume()
+    }
+    
+    
 }
